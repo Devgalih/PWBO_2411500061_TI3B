@@ -6,7 +6,6 @@
     </div>
     <div class="row">  
         <div class="col-lg-12">
-            <!--button modal trigger -->
             <button type="button" class="btn btn-primary tombolTambahData" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Tambah Data Mahasiswa
             </button>
@@ -49,7 +48,6 @@
     </div>
 </div>
 
-<!--modal-->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -59,7 +57,6 @@
       </div>
       <div class="modal-body">
         <form action="<?php echo BASEURL; ?>/mahasiswa/tambah" method="post">
-            <!-- Input hidden untuk ID -->
             <input type="hidden" name="id" id="id">
             
             <div class="mb-3">

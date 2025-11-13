@@ -1,11 +1,9 @@
 $(function(){
-    // Tombol Tambah Data
     $('.tombolTambahData').on('click', function() {
         $('#exampleModal').html('Tambah Data Mahasiswa');
         $('.modal-footer button[type=submit]').html('Tambah Data');
         $('.modal-body form').attr('action', '<?php echo BASEURL; ?>/mahasiswa/tambah');
         
-        // Reset form
         $('#id').val('');
         $('#nama').val('');
         $('#nim').val('');
@@ -13,7 +11,6 @@ $(function(){
         $('#jurusan').val('Teknik Informatika');
     });
 
-    // Tombol Ubah Data
     $('.tampilModalUbah').on('click', function() {
         $('#exampleModal').html('Ubah Data Mahasiswa');
         $('.modal-footer button[type=submit]').html('Ubah Data');

@@ -20,16 +20,14 @@ class Mahasiswa extends Controller {
 
     public function tambah()
     {
-       if ($this->model('Mahasiswa_model')->tambahDataMahasiswa($_POST) > 0) {
-                // Set flash message untuk success
-                Flasher::setFlash('berhasil', 'ditambahkan', 'success');
-                header('Location: ' . BASEURL . '/mahasiswa');
-                exit;
-            } else {
-                // Set flash message untuk error
-                Flasher::setFlash('gagal', 'ditambahkan', 'danger');
-                header('Location: ' . BASEURL . '/mahasiswa');
-                exit;
+        if ($this->model('Mahasiswa_model')->tambahDataMahasiswa($_POST) > 0) {
+            Flasher::setFlash('berhasil', 'ditambahkan', 'success');
+            header('Location: ' . BASEURL . '/mahasiswa');
+            exit;
+        } else {
+            Flasher::setFlash('gagal', 'ditambahkan', 'danger');
+            header('Location: ' . BASEURL . '/mahasiswa');
+            exit;
         }
     }
 
@@ -50,11 +48,8 @@ class Mahasiswa extends Controller {
     {
         echo json_encode($this->model('Mahasiswa_model')->getMahasiswaById($_POST['id']));
     }
-        public function ubah()
+    public function ubah()
     {
-        // Debug: lihat data yang diterima
-        error_log("Data POST: " . print_r($_POST, true));
-        
         if ($this->model('Mahasiswa_model')->ubahDataMahasiswa($_POST) > 0) {
             Flasher::setFlash('berhasil', 'diubah', 'success');
             header('Location: ' . BASEURL . '/mahasiswa');

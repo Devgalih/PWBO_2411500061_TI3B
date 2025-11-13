@@ -10,12 +10,11 @@ class Database {
 
     public function __construct()
     {
-        //datasource name
         $dsn = 'mysql:host='.$this->host.';dbname='.$this->dbname.'';
 
-        $option = [//untuk optimasi
-            PDO::ATTR_PERSISTENT => true, //untuk membuat database kita koneksinya terjaga terus
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION //untuk mode error tsmpilkan exception
+        $option = [
+            PDO::ATTR_PERSISTENT => true,
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         ];
 
         try {
